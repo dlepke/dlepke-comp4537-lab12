@@ -17,7 +17,7 @@ function pagination({ numberOfPages, currentPage, setCurrentPage }) {
       {currentPage !== 1 && <button onClick={prevPage}>prev </button>}
 
       {pageNumbers.map((number) => {
-        if (number < currentPage + 6 && number > currentPage - 6)
+        if (number < currentPage + 6 && number > currentPage - 6) {
           return (
             <button
               key={number}
@@ -27,6 +27,9 @@ function pagination({ numberOfPages, currentPage, setCurrentPage }) {
               {number}
             </button>
           );
+        } else {
+          return null;
+        }
       })}
 
       {currentPage !== numberOfPages && (
