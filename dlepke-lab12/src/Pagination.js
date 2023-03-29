@@ -19,14 +19,13 @@ function pagination({ numberOfPages, currentPage, setCurrentPage }) {
       {pageNumbers.map((number) => {
         if (number < currentPage + 6 && number > currentPage - 6)
           return (
-            <>
-              <button
-                onClick={() => setCurrentPage(number)}
-                className={number === currentPage ? "active" : ""}
-              >
-                {number}
-              </button>
-            </>
+            <button
+              key={number}
+              onClick={() => setCurrentPage(number)}
+              className={number === currentPage ? "active" : ""}
+            >
+              {number}
+            </button>
           );
       })}
 

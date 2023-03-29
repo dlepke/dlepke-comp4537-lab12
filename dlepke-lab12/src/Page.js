@@ -6,7 +6,7 @@ function page({ currentPokemons, currentPage }) {
       <h1>Page number {currentPage}</h1>
       <div className="pokemon-list">
         {currentPokemons.map((item) => {
-          return <Pokemon pokemon={item} />;
+          return <Pokemon key={item.id} pokemon={item} />;
         })}
       </div>
     </div>
